@@ -1,0 +1,8 @@
+{
+  "name": "ZAD Foods",
+  "description": "Pure Goodness in Every Bite — Official E-commerce Storefront and Admin Management Platform for ZAD Foods Bangladesh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

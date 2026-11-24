@@ -1,0 +1,1114 @@
+# PROJECT: ZAD FOODS — COMPLETE DYNAMIC E-COMMERCE WEBSITE
+
+Act as a Senior Full-Stack Developer, UI/UX Designer, E-commerce Architect, and Database Engineer.
+
+I want you to build a complete, professional, modern, production-ready, fully responsive E-commerce website for a Bangladeshi food and natural products brand named **ZAD Foods**.
+
+This must NOT be a static landing page or a simple frontend demo.
+
+Build a complete working E-commerce platform with:
+1. Professional customer-facing website.
+2. Complete Admin Dashboard.
+3. Product management system.
+4. Image and media management system.
+5. Order management system.
+6. Inventory and stock management.
+7. Dynamic content management system (CMS).
+8. Persistent database and cloud image storage.
+9. Secure admin authentication.
+10. Full control over website content and appearance through the Admin Dashboard.
+
+The website must be designed so that I can operate and manage the entire business online without editing source code.
+
+---
+
+# 1. BUSINESS INFORMATION
+
+Brand Name: ZAD Foods
+
+Tagline: Pure Goodness in Every Bite
+
+Founder & Owner: Irfan Ahmad (ইরফান আহমেদ)
+
+Business Type: Food & Natural Products
+
+Country: Bangladesh
+
+Division: Dhaka
+
+Business Location: Mirpur-14, Dhaka, Bangladesh
+
+Phone: 01772103832
+
+Email: Not provided yet. Make this editable from the Admin Dashboard.
+
+Facebook Page: ZAD Foods
+
+Business Description:
+
+ZAD Foods is a food and natural products brand offering quality nuts, honey, dates, dried fruits, honey nuts, and other natural food products.
+
+Our mission is to deliver quality food products to customers and establish ZAD Foods as a trusted food brand in Bangladesh.
+
+Brand Tagline:
+"Pure Goodness in Every Bite"
+
+All business information must be editable through the Admin Dashboard.
+
+---
+
+# 2. BRAND IDENTITY & DESIGN DIRECTION
+
+I will provide the official ZAD Foods logo as an uploaded image.
+
+Use the uploaded logo as the primary brand identity.
+
+IMPORTANT:
+- Do not redesign or distort the original logo.
+- Maintain its original proportions.
+- Use it in the website header, footer, favicon where suitable, and other appropriate places.
+- Allow the admin to replace the logo in the future.
+- Support transparent PNG, SVG, and WebP logos.
+
+Brand colors should be inspired by the logo:
+
+Primary Dark Green: #006B35 (approximate)
+
+Secondary Green: #168B35
+
+Bright Leaf Green: #7CCB19
+
+White: #FFFFFF
+
+Light Background: #F7FAF5
+
+Dark Text: #17251B
+
+Use these as initial colors but allow the admin to customize the color palette.
+
+DESIGN STYLE:
+
+Create a premium, fresh, natural, clean, and trustworthy food brand aesthetic.
+
+The design should communicate:
+- Freshness
+- Natural goodness
+- Quality
+- Trust
+- Health-conscious food choices
+- Premium product presentation
+
+Use:
+- Modern typography.
+- Beautiful product photography.
+- Rounded but elegant cards.
+- Subtle shadows.
+- Soft green backgrounds.
+- Clean spacing.
+- Attractive product galleries.
+- Smooth hover effects.
+- Subtle animations.
+- Modern icons.
+
+Avoid:
+- Overly complicated layouts.
+- Excessive gradients.
+- Too many decorative elements.
+- Cheap-looking marketplace designs.
+- Excessive animation.
+
+The website must look like a professional established food brand.
+
+---
+
+# 3. TECHNOLOGY & ARCHITECTURE
+
+Build using a modern, maintainable full-stack architecture.
+
+Preferred stack:
+- React
+- TypeScript
+- Tailwind CSS
+- Modern component-based architecture.
+- Firebase Authentication.
+- Cloud Firestore database.
+- Firebase Storage for product images and media.
+
+Use the latest stable compatible packages.
+
+IMPORTANT BACKEND REQUIREMENTS:
+
+- All products must be stored in a persistent database.
+- All orders must be stored in a persistent database.
+- All website settings must be stored in a persistent database.
+- All uploaded images must be stored in cloud storage.
+- Data must remain available after refreshing or reopening the website.
+- Do not use localStorage as the primary database.
+- Do not use hardcoded product lists as the permanent data source.
+- Implement secure database access rules.
+- Separate admin and customer permissions.
+- Do not expose secret keys or admin credentials in frontend code.
+- Never hardcode an admin password.
+
+If Firebase configuration is required, integrate Firebase properly and provide a clear setup guide.
+
+If any service requires additional configuration, create the complete integration structure and clearly explain what needs to be configured.
+
+---
+
+# 4. WEBSITE STRUCTURE
+
+Create the following pages:
+
+1. Home
+2. Shop / All Products
+3. Product Category Pages
+4. Individual Product Details
+5. About Us
+6. Contact Us
+7. Cart
+8. Checkout
+9. Order Confirmation
+10. Order Tracking
+11. Privacy Policy
+12. Terms & Conditions
+13. Return & Refund Policy
+14. Admin Login
+15. Admin Dashboard
+
+Use a consistent header, footer, typography, and design language across all pages.
+
+The website must be fully responsive on:
+- Desktop
+- Laptop
+- Tablet
+- Mobile phones
+
+Mobile experience is particularly important because most Bangladeshi customers will browse using smartphones.
+
+---
+
+# 5. HOMEPAGE DESIGN
+
+Create an attractive homepage with the following sections.
+
+## A. Announcement Bar
+
+A small top announcement bar.
+
+Example:
+"Welcome to ZAD Foods | Pure Goodness in Every Bite"
+
+The admin should be able to:
+- Edit the text.
+- Enable or disable the bar.
+- Change its background color.
+- Add an optional link.
+
+## B. Header
+
+Include:
+- ZAD Foods logo.
+- Navigation menu.
+- Search icon.
+- Account icon (if customer accounts are enabled).
+- Shopping cart icon with live cart count.
+
+Navigation:
+Home | Shop | Categories | About Us | Contact
+
+On mobile, use a clean hamburger menu.
+
+All navigation labels and menu items should be manageable from the Admin Dashboard.
+
+## C. Hero Banner / Slider
+
+Create a beautiful full-width hero section.
+
+Use high-quality food photography featuring:
+- Natural honey.
+- Almonds and mixed nuts.
+- Dates.
+- Dried fruits.
+- Honey nuts.
+
+Example heading:
+
+"Discover the Goodness of Nature"
+
+Subheading:
+
+"Premium Nuts, Pure Honey & Natural Food Products — Delivered to Your Doorstep."
+
+CTA buttons:
+- Shop Now
+- Explore Products
+
+Admin controls:
+- Add unlimited banners/slides.
+- Upload and replace images.
+- Edit headings and descriptions.
+- Change button text and links.
+- Reorder slides.
+- Enable/disable slides.
+- Set separate desktop and mobile images.
+
+## D. Featured Categories
+
+Create beautiful category cards with images.
+
+Initial categories:
+1. Nuts & Dry Fruits
+2. Honey
+3. Honey Nuts
+4. Dates
+5. Natural Oils
+6. Special Packs
+
+The admin must be able to add, edit, delete, reorder, and upload category images.
+
+## E. Featured Products
+
+Show selected products with:
+- Product image.
+- Product name.
+- Price.
+- Previous price / discount if applicable.
+- Available weight or size.
+- Stock availability.
+- Add to Cart button.
+- View Details button.
+
+Admin must control which products appear here.
+
+## F. Promotional Banner
+
+Create an editable promotional section.
+
+Example:
+"Goodness in Every Pack"
+
+Allow the admin to upload a promotional image and edit the text and CTA.
+
+## G. Why Choose ZAD Foods?
+
+Create four attractive trust-building features:
+
+1. Quality Products
+2. Carefully Selected Ingredients
+3. Convenient Ordering
+4. Home Delivery
+
+All texts and icons must be editable.
+
+Do not make unverified medical, nutritional, or purity claims.
+
+## H. Brand Introduction
+
+Heading:
+"Welcome to ZAD Foods"
+
+Description:
+"At ZAD Foods, we bring you a carefully selected collection of nuts, honey, dates, dried fruits, and natural food products. Our goal is to make quality food products accessible and convenient for everyone."
+
+Button: Learn More
+
+## I. Customer Reviews
+
+Create a dynamic customer testimonial section.
+
+Admin can:
+- Add customer reviews.
+- Upload optional customer photos.
+- Edit reviews.
+- Approve or hide reviews.
+- Display selected reviews on homepage.
+
+Do not create fake customer reviews.
+
+## J. Newsletter / Contact Section
+
+Create an optional newsletter subscription section.
+
+Allow admin to configure its heading, description, and visibility.
+
+## K. Footer
+
+Include:
+- Logo.
+- Brand description.
+- Quick links.
+- Product categories.
+- Contact number.
+- Business address.
+- Facebook link.
+- Email.
+- Copyright information.
+
+All footer information must be editable.
+
+---
+
+# 6. INITIAL PRODUCT DATABASE
+
+Create the following initial products using the information below.
+
+IMPORTANT:
+Do not invent missing prices, product specifications, weights, ingredients, or descriptions.
+
+Allow the admin to add these details later.
+
+## PRODUCT 1: TEN NUTS MINI PACK
+
+Category: Nuts & Dry Fruits
+
+Variants:
+
+20 Gram — Retail Price: ৳20
+
+25 Gram — Retail Price: ৳25
+
+Wholesale pricing:
+Minimum wholesale quantity: 30 pieces.
+
+20 Gram — ৳16 per piece.
+
+25 Gram — ৳20 per piece.
+
+Special wholesale order:
+25 Gram, 300 pieces — ৳18 per piece (previous costing).
+
+Allow multiple variants and quantity-based pricing.
+
+## PRODUCT 2: HONEY NUTS
+
+Category: Honey Nuts
+
+Variants:
+
+500 Gram — ৳650
+
+1 KG — ৳1,250
+
+## PRODUCT 3: SUKKARI MUFATTAL DATES
+
+Category: Dates
+
+Variants:
+
+1 KG — ৳850
+
+3 KG — ৳2,550
+
+Special Offer:
+Free Home Delivery on 3 KG orders.
+
+Display this offer clearly on the product page.
+
+## PRODUCT 4: BOROI FLOWER HONEY
+
+Category: Honey
+
+Variants:
+
+500 Gram — ৳450
+
+1 KG — ৳900
+
+## PRODUCT 5: LITCHI FLOWER HONEY
+
+Category: Honey
+
+Variant:
+
+1 KG — ৳650
+
+## PRODUCT 6: BLACK SEED FLOWER HONEY
+
+Category: Honey
+
+Variant:
+
+1 KG — ৳1,400
+
+500 Gram price: Not determined yet.
+
+Do not display an invented 500 Gram price.
+
+## PRODUCT 7: BLACK SEED OIL
+
+Category: Natural Oils
+
+Variant:
+
+100 Gram — ৳300
+
+## PRODUCT 8: MINI HONEY NUTS
+
+Category: Honey Nuts
+
+Price: Not provided.
+
+Create the product as a draft or inactive product.
+
+## PRODUCT 9: OTHER NUTS & DRIED FRUITS
+
+Category: Nuts & Dry Fruits
+
+Allow future products to be added through the Admin Dashboard.
+
+IMPORTANT:
+The initial products may not have images. Allow the admin to upload product images before publishing them.
+
+---
+
+# 7. PRODUCT MANAGEMENT SYSTEM
+
+This is one of the most important features.
+
+Create a complete dynamic product management system.
+
+Admin should be able to:
+
+- Add unlimited products.
+- Edit existing products.
+- Delete products.
+- Duplicate products.
+- Publish/unpublish products.
+- Save products as drafts.
+- Mark products as featured.
+- Mark products as bestsellers.
+- Mark products as new arrivals.
+- Mark products as out of stock.
+- Set regular prices.
+- Set discounted prices.
+- Set multiple weight/size variants.
+- Set different prices for each variant.
+- Set wholesale prices.
+- Set minimum wholesale quantities.
+- Set special bulk-order pricing.
+- Add product descriptions.
+- Add short descriptions.
+- Add SKU/product codes.
+- Add stock quantities.
+- Manage stock status.
+- Assign categories.
+- Add tags.
+- Set product-specific delivery information.
+- Add product-specific offers.
+- Manage SEO titles and descriptions.
+
+## Product Image Management
+
+Provide a complete image management interface.
+
+Each product should support multiple images.
+
+Admin must be able to:
+
+- Upload multiple images.
+- Upload images from a computer.
+- Preview uploaded images.
+- Set a featured/cover image.
+- Change image order by drag and drop.
+- Delete individual images.
+- Replace images.
+- Edit image alt text.
+- Crop images.
+- Rotate images.
+- Zoom and reposition images where supported.
+- Maintain different image sizes for thumbnails and product galleries.
+
+Use Firebase Storage for image uploads.
+
+Provide image compression and optimization.
+
+Use modern WebP image delivery where possible.
+
+Product gallery on the customer website should support:
+- Main image.
+- Thumbnail gallery.
+- Image zoom.
+- Mobile swipe navigation.
+
+---
+
+# 8. PRODUCT DETAILS PAGE
+
+Create a professional product details layout.
+
+Display:
+
+- Product name.
+- Product image gallery.
+- Product description.
+- Price.
+- Discounted price.
+- Available variants.
+- Weight/size selector.
+- Quantity selector.
+- Stock availability.
+- Wholesale pricing information when applicable.
+- Special offers.
+- Delivery information.
+- Add to Cart button.
+- Buy Now button.
+- Related products.
+
+When a customer changes the variant, the displayed price must update automatically.
+
+When a customer selects a quantity, the cart price must be calculated correctly.
+
+Do not allow customers to order more than the available stock if stock management is enabled.
+
+---
+
+# 9. SHOPPING CART
+
+Build a fully functional shopping cart.
+
+Features:
+
+- Add products to cart.
+- Remove products.
+- Increase/decrease quantities.
+- Change product variants.
+- Automatically calculate subtotal.
+- Automatically calculate discounts.
+- Display delivery charges.
+- Display total payable amount.
+- Preserve the cart during page refreshes.
+
+Ensure cart calculations are accurate.
+
+Show a cart summary before checkout.
+
+---
+
+# 10. CHECKOUT & ORDER SYSTEM
+
+Create a simple and user-friendly Bangladeshi checkout experience.
+
+Customer information fields:
+
+- Full Name
+- Mobile Number
+- Alternative Mobile Number (optional)
+- District
+- Area / Thana
+- Full Delivery Address
+- Order Notes (optional)
+
+Delivery options and charges must be configurable from the Admin Dashboard.
+
+Payment methods should be configurable.
+
+Initially support:
+- Cash on Delivery (if enabled by admin).
+- Manual payment methods (if configured by admin).
+
+Do not activate payment gateway integrations without proper credentials and configuration.
+
+After placing an order:
+
+- Generate a unique order ID.
+- Save order information in Firestore.
+- Show an order confirmation page.
+- Display ordered products and quantities.
+- Display selected variants.
+- Display subtotal, delivery charge, discount, and total.
+- Save customer details.
+- Update inventory according to the configured stock policy.
+
+Do not rely only on WhatsApp messages to save orders. Every order must be recorded in the database.
+
+Optionally provide a WhatsApp order confirmation button.
+
+---
+
+# 11. WHOLESALE ORDERING SYSTEM
+
+ZAD Foods supports both retail and wholesale sales.
+
+Create a wholesale ordering feature.
+
+For products with wholesale pricing, display:
+
+- Minimum order quantity.
+- Wholesale unit price.
+- Retail unit price.
+- Bulk-order offers.
+
+For example:
+
+TEN NUTS MINI PACK:
+
+20 Gram:
+Retail ৳20
+Wholesale ৳16
+Minimum order: 30 pieces.
+
+25 Gram:
+Retail ৳25
+Wholesale ৳20
+Minimum order: 30 pieces.
+
+Special order:
+25 Gram, 300 pieces — ৳18 per piece.
+
+The admin should be able to configure wholesale prices and minimum quantities for every product independently.
+
+Provide an optional wholesale inquiry form.
+
+---
+
+# 12. ORDER MANAGEMENT DASHBOARD
+
+Admin must have complete control over orders.
+
+Create order management features:
+
+- View all orders.
+- View individual order details.
+- Search orders.
+- Filter by date.
+- Filter by order status.
+- Filter by payment method.
+- Filter by customer phone number.
+- Print order invoices.
+- Download invoices as PDF if supported.
+- Update order status.
+- Add internal admin notes.
+- Cancel orders.
+- View customer details.
+- View order history.
+
+Order statuses:
+
+1. Pending
+2. Confirmed
+3. Processing
+4. Ready to Ship
+5. Shipped
+6. Delivered
+7. Cancelled
+8. Returned
+
+Provide a dashboard summary:
+
+- Total Orders
+- Pending Orders
+- Delivered Orders
+- Cancelled Orders
+- Total Sales
+- Recent Orders
+
+Make all statistics dynamic and database-driven.
+
+---
+
+# 13. INVENTORY MANAGEMENT
+
+Create an inventory management system.
+
+Features:
+
+- Track stock by product variant.
+- Update stock manually.
+- Set low-stock alerts.
+- Show out-of-stock products.
+- Track stock changes.
+- Enable/disable stock management.
+- Automatically adjust stock based on completed or confirmed orders according to admin settings.
+
+Admin should be able to configure when stock is deducted and when cancelled orders restore stock.
+
+---
+
+# 14. COMPLETE ADMIN DASHBOARD
+
+Create a professional and easy-to-use Admin Dashboard.
+
+Route:
+ /admin
+
+Secure admin login is mandatory.
+
+Only authorized admin users should access the dashboard.
+
+Do not allow public registration as an administrator.
+
+Create the following dashboard modules:
+
+## A. Overview
+
+Show:
+- Total Revenue.
+- Total Orders.
+- Pending Orders.
+- Total Products.
+- Low Stock Products.
+- Recent Orders.
+- Sales Summary.
+
+## B. Products
+
+Full product management with image uploads, variants, prices, categories, stock, wholesale pricing, and publishing controls.
+
+## C. Categories
+
+Add, edit, delete, reorder, and manage category images.
+
+## D. Orders
+
+View and manage all customer orders.
+
+## E. Customers
+
+View customer information and order history.
+
+## F. Inventory
+
+Manage stock, stock adjustments, and low-stock alerts.
+
+## G. Homepage Editor
+
+Admin should be able to edit:
+
+- Hero banner.
+- Slider images.
+- Headings.
+- Subheadings.
+- Button labels.
+- Button links.
+- Featured products.
+- Promotional banners.
+- Brand introduction.
+- Why Choose Us section.
+- Testimonials.
+- Newsletter section.
+
+Provide enable/disable controls for individual homepage sections.
+
+## H. Website Content Manager
+
+Allow admin to edit:
+
+- About Us.
+- Contact Us.
+- Privacy Policy.
+- Terms & Conditions.
+- Return Policy.
+- Footer description.
+- Header announcement.
+- Contact information.
+- Social media links.
+
+## I. Media Library
+
+Create a centralized media library.
+
+Features:
+- Upload images.
+- View all uploaded images.
+- Search images.
+- Preview images.
+- Replace images.
+- Delete images.
+- Copy image URLs.
+- Organize images into folders or categories.
+- Show image dimensions and file sizes where possible.
+
+Images should be reusable across banners, products, categories, and other website sections.
+
+## J. Website Appearance
+
+Allow admin to customize:
+
+- Primary color.
+- Secondary color.
+- Background color.
+- Text color.
+- Logo.
+- Favicon.
+- Font selection from supported fonts.
+- Button styles.
+- Border radius.
+- Header appearance.
+- Footer appearance.
+
+## K. Delivery Settings
+
+Manage:
+- Delivery charges.
+- Delivery areas.
+- Free delivery thresholds.
+- Product-specific delivery offers.
+- Delivery instructions.
+
+## L. Business Settings
+
+Manage:
+- Business name.
+- Logo.
+- Tagline.
+- Phone.
+- Email.
+- Address.
+- Facebook page.
+- Other social media links.
+- Business hours.
+
+## M. SEO Settings
+
+Manage:
+- Website title.
+- Meta description.
+- Search keywords.
+- Social sharing image.
+- Product SEO details.
+- Page SEO details.
+
+## N. Admin Users & Security
+
+Allow the owner to manage authorized admin accounts securely.
+
+Use role-based permissions if multiple staff members are supported.
+
+Never expose admin passwords in the database or frontend.
+
+---
+
+# 15. BANGLA & ENGLISH LANGUAGE SUPPORT
+
+The website should support both Bangla and English.
+
+Provide a language switcher in the header.
+
+Default language: Bangla.
+
+Secondary language: English.
+
+Admin should be able to manage both language versions of:
+
+- Product names.
+- Product descriptions.
+- Category names.
+- Homepage content.
+- Navigation labels.
+- Website informational pages.
+
+Use proper Unicode Bangla rendering.
+
+Use a beautiful, readable Bangla font such as Hind Siliguri or Noto Sans Bengali.
+
+Use suitable English typography such as Inter.
+
+All prices should display in Bangladeshi Taka.
+
+Example:
+৳650
+
+Use appropriate Bangladeshi number formatting where applicable.
+
+---
+
+# 16. CUSTOMER EXPERIENCE & ADDITIONAL FEATURES
+
+Include:
+
+- Product search.
+- Category filtering.
+- Price sorting.
+- Newest products sorting.
+- Featured products.
+- Related products.
+- Recently viewed products.
+- Wishlist (if customer accounts are implemented).
+- Responsive mobile navigation.
+- Loading states.
+- Empty states.
+- Error messages.
+- Success notifications.
+- Friendly 404 page.
+
+Add an optional floating WhatsApp contact button.
+
+WhatsApp number should be configurable from Admin Settings.
+
+Use the Bangladesh country code +880 when generating WhatsApp links.
+
+---
+
+# 17. WEBSITE PERFORMANCE & SECURITY
+
+Important technical requirements:
+
+- Fast loading.
+- Responsive images.
+- Lazy loading.
+- Optimized React components.
+- Clean URL structure.
+- SEO-friendly pages.
+- Semantic HTML.
+- Accessible buttons and forms.
+- Input validation.
+- Secure admin authentication.
+- Protected admin routes.
+- Firebase security rules.
+- Server-side validation where applicable.
+- Protection against unauthorized database access.
+- Proper error handling.
+- No exposed private API keys.
+- No fake functionality.
+
+Never use mock data as the permanent data source.
+
+Use real database integration for products, settings, media, and orders.
+
+---
+
+# 18. INITIAL WEBSITE CONTENT & BRAND PRESENTATION
+
+Use the provided ZAD Foods logo.
+
+Create the initial website content based on the supplied business information.
+
+Homepage hero heading:
+
+"Pure Goodness in Every Bite"
+
+Supporting text:
+
+"Discover a delightful collection of nuts, natural honey, premium dates, dried fruits, and more."
+
+Primary button:
+
+"Shop Now"
+
+Secondary button:
+
+"Explore Our Products"
+
+About Us heading:
+
+"Good Food, Better Choices"
+
+About Us description:
+
+"ZAD Foods is dedicated to bringing quality nuts, honey, dates, dried fruits, and natural food products closer to your home. We aim to build a trusted brand through quality products, convenient service, and customer satisfaction."
+
+Contact information:
+
+Phone: 01772103832
+
+Location: Mirpur-14, Dhaka, Bangladesh.
+
+Facebook: ZAD Foods.
+
+Keep the above content editable.
+
+---
+
+# 19. IMPORTANT ADMIN EXPERIENCE REQUIREMENTS
+
+The Admin Dashboard should be extremely easy to use, even for someone who is not a programmer.
+
+Every important section should have:
+
+- Add New button.
+- Edit button.
+- Delete button.
+- Save button.
+- Cancel button.
+- Image upload button.
+- Preview option.
+- Publish / Unpublish option.
+
+Use confirmation dialogs before deleting important information.
+
+Use clear success and error notifications.
+
+Use searchable tables and pagination for large datasets.
+
+Provide an intuitive interface with a left sidebar and a responsive mobile dashboard.
+
+Most importantly:
+
+I should NOT need to edit code to:
+- Add new products.
+- Change prices.
+- Change product images.
+- Add product categories.
+- Change homepage banners.
+- Edit website text.
+- Change business information.
+- Update delivery charges.
+- Manage orders.
+- Manage inventory.
+- Change the logo.
+- Change the website colors.
+
+Everything should be controlled through the Admin Dashboard.
+
+---
+
+# 20. DEVELOPMENT & DELIVERY INSTRUCTIONS
+
+Build the website in a complete and organized way.
+
+Do not stop after generating the homepage.
+
+Do not create only a UI prototype.
+
+Implement all major pages, database collections, CRUD operations, image uploads, authentication, and order workflows.
+
+Use reusable components and a clean folder structure.
+
+Create proper loading, success, and error states.
+
+If an external integration is not configured, provide a clear configuration interface rather than pretending that it works.
+
+Before considering the project complete, test:
+
+1. Admin login.
+2. Adding a new product.
+3. Editing an existing product.
+4. Uploading multiple product images.
+5. Changing product prices.
+6. Creating product variants.
+7. Adding and editing categories.
+8. Updating homepage banners.
+9. Adding products to cart.
+10. Checkout and order submission.
+11. Order management.
+12. Inventory updates.
+13. Website settings updates.
+14. Mobile responsiveness.
+15. Data persistence after page refresh.
+
+Provide a README or setup guide explaining:
+
+- How to configure Firebase.
+- How to create the first admin account.
+- How to configure database rules.
+- How to configure Firebase Storage.
+- How to run the project.
+- How to deploy the website.
+- How to manage the website after deployment.
+
+Do not leave critical features as non-functional placeholders.
+
+If the full project is too large to implement in one pass, prioritize a working end-to-end architecture and then continue implementing the remaining modules without replacing existing working features.
+
+FINAL GOAL:
+
+Deliver a complete, professional, production-ready, fully dynamic E-commerce website for ZAD Foods.
+
+The customer-facing website should look like a premium natural food brand.
+
+The Admin Dashboard should provide complete control over the entire website and business operations.
+
+The owner must be able to operate, update, expand, and maintain the website independently without needing a developer for routine changes.
+
+Build the actual working application now.

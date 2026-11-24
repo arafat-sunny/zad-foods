@@ -1,0 +1,271 @@
+{
+  "entities": {
+    "AdminUser": {
+      "title": "AdminUser",
+      "description": "Authorized ZAD Foods administrator account with role-based permissions.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "email": { "type": "string", "format": "email", "maxLength": 200 },
+        "displayName": { "type": "string", "maxLength": 120 },
+        "role": { "type": "string", "enum": ["owner", "manager", "staff"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "displayName", "role", "createdAt", "updatedAt"]
+    },
+    "SiteSetting": {
+      "title": "SiteSetting",
+      "description": "Dynamic CMS and business configuration documents (business, appearance, homepage, delivery, seo, pages).",
+      "type": "object",
+      "properties": {
+        "section": { "type": "string", "enum": ["business", "appearance", "homepage", "delivery", "seo", "pages"] },
+        "data": { "type": "object" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["section", "data", "updatedAt"]
+    },
+    "Category": {
+      "title": "Category",
+      "description": "Product category with bilingual Bangla/English labels, image, and ordering.",
+      "type": "object",
+      "properties": {
+        "slug": { "type": "string", "maxLength": 120, "pattern": "^[a-z0-9\\-]+$" },
+        "nameBn": { "type": "string", "maxLength": 160 },
+        "nameEn": { "type": "string", "maxLength": 160 },
+        "descriptionBn": { "type": "string", "maxLength": 600 },
+        "descriptionEn": { "type": "string", "maxLength": 600 },
+        "imageUrl": { "type": "string", "maxLength": 2000 },
+        "order": { "type": "number" },
+        "isActive": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["slug", "nameBn", "nameEn", "imageUrl", "order", "isActive", "createdAt", "updatedAt"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "E-commerce product with variants, retail/wholesale pricing, bilingual descriptions, stock, and gallery images.",
+      "type": "object",
+      "properties": {
+        "slug": { "type": "string", "maxLength": 160, "pattern": "^[a-z0-9\\-]+$" },
+        "sku": { "type": "string", "maxLength": 80 },
+        "nameBn": { "type": "string", "maxLength": 200 },
+        "nameEn": { "type": "string", "maxLength": 200 },
+        "shortDescBn": { "type": "string", "maxLength": 600 },
+        "shortDescEn": { "type": "string", "maxLength": 600 },
+        "descBn": { "type": "string", "maxLength": 8000 },
+        "descEn": { "type": "string", "maxLength": 8000 },
+        "categoryId": { "type": "string", "maxLength": 128 },
+        "categorySlug": { "type": "string", "maxLength": 128 },
+        "status": { "type": "string", "enum": ["published", "draft", "archived"] },
+        "isFeatured": { "type": "boolean" },
+        "isBestseller": { "type": "boolean" },
+        "isNewArrival": { "type": "boolean" },
+        "isOutOfStock": { "type": "boolean" },
+        "hasWholesale": { "type": "boolean" },
+        "wholesaleNoteBn": { "type": "string", "maxLength": 600 },
+        "wholesaleNoteEn": { "type": "string", "maxLength": 600 },
+        "specialOfferBn": { "type": "string", "maxLength": 400 },
+        "specialOfferEn": { "type": "string", "maxLength": 400 },
+        "deliveryInfoBn": { "type": "string", "maxLength": 600 },
+        "deliveryInfoEn": { "type": "string", "maxLength": 600 },
+        "images": { "type": "array" },
+        "variants": { "type": "array" },
+        "tags": { "type": "array" },
+        "seoTitle": { "type": "string", "maxLength": 200 },
+        "seoDescription": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["slug", "sku", "nameBn", "nameEn", "categoryId", "categorySlug", "status", "isFeatured", "isBestseller", "isNewArrival", "isOutOfStock", "hasWholesale", "images", "variants", "tags", "createdAt", "updatedAt"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer purchase order containing PII delivery details, itemized variants, pricing, and lifecycle status.",
+      "type": "object",
+      "properties": {
+        "orderNumber": { "type": "string", "maxLength": 64, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "customerUid": { "type": "string", "maxLength": 128 },
+        "customerName": { "type": "string", "maxLength": 160 },
+        "phone": { "type": "string", "maxLength": 32 },
+        "altPhone": { "type": "string", "maxLength": 32 },
+        "district": { "type": "string", "maxLength": 100 },
+        "thana": { "type": "string", "maxLength": 120 },
+        "address": { "type": "string", "maxLength": 600 },
+        "notes": { "type": "string", "maxLength": 600 },
+        "adminNotes": { "type": "string", "maxLength": 1000 },
+        "paymentMethod": { "type": "string", "maxLength": 80 },
+        "paymentStatus": { "type": "string", "enum": ["unpaid", "paid", "pending_verification", "refunded"] },
+        "paymentReference": { "type": "string", "maxLength": 120 },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "processing", "ready_to_ship", "shipped", "delivered", "cancelled", "returned"] },
+        "items": { "type": "array" },
+        "subtotal": { "type": "number" },
+        "discount": { "type": "number" },
+        "deliveryCharge": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "stockDeducted": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["orderNumber", "customerName", "phone", "district", "thana", "address", "paymentMethod", "paymentStatus", "status", "items", "subtotal", "discount", "deliveryCharge", "totalAmount", "stockDeducted", "createdAt", "updatedAt"]
+    },
+    "OrderTracking": {
+      "title": "OrderTracking",
+      "description": "PII-free public order tracking mirror keyed by exact orderNumber.",
+      "type": "object",
+      "properties": {
+        "orderNumber": { "type": "string", "maxLength": 64, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "processing", "ready_to_ship", "shipped", "delivered", "cancelled", "returned"] },
+        "district": { "type": "string", "maxLength": 100 },
+        "paymentMethod": { "type": "string", "maxLength": 80 },
+        "subtotal": { "type": "number" },
+        "discount": { "type": "number" },
+        "deliveryCharge": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "itemCount": { "type": "number" },
+        "itemsSummary": { "type": "array" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["orderNumber", "status", "district", "paymentMethod", "subtotal", "discount", "deliveryCharge", "totalAmount", "itemCount", "itemsSummary", "createdAt", "updatedAt"]
+    },
+    "Review": {
+      "title": "Review",
+      "description": "Admin-moderated customer review displayed on storefront when approved.",
+      "type": "object",
+      "properties": {
+        "customerName": { "type": "string", "maxLength": 120 },
+        "location": { "type": "string", "maxLength": 120 },
+        "rating": { "type": "number" },
+        "commentBn": { "type": "string", "maxLength": 1000 },
+        "commentEn": { "type": "string", "maxLength": 1000 },
+        "photoUrl": { "type": "string", "maxLength": 2000 },
+        "productId": { "type": "string", "maxLength": 128 },
+        "isApproved": { "type": "boolean" },
+        "showOnHomepage": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["customerName", "rating", "commentBn", "commentEn", "isApproved", "showOnHomepage", "createdAt", "updatedAt"]
+    },
+    "MediaAsset": {
+      "title": "MediaAsset",
+      "description": "Centralized media library asset metadata.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 200 },
+        "url": { "type": "string", "maxLength": 2000 },
+        "storagePath": { "type": "string", "maxLength": 500 },
+        "folder": { "type": "string", "enum": ["products", "banners", "categories", "brand", "reviews", "general"] },
+        "alt": { "type": "string", "maxLength": 250 },
+        "width": { "type": "number" },
+        "height": { "type": "number" },
+        "sizeBytes": { "type": "number" },
+        "mimeType": { "type": "string", "maxLength": 80 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "url", "folder", "createdAt"]
+    },
+    "Inquiry": {
+      "title": "Inquiry",
+      "description": "Wholesale inquiry, contact message, or newsletter subscription.",
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "enum": ["wholesale", "contact", "newsletter"] },
+        "name": { "type": "string", "maxLength": 160 },
+        "phone": { "type": "string", "maxLength": 32 },
+        "email": { "type": "string", "maxLength": 200 },
+        "businessName": { "type": "string", "maxLength": 200 },
+        "productInterest": { "type": "string", "maxLength": 200 },
+        "quantity": { "type": "string", "maxLength": 100 },
+        "message": { "type": "string", "maxLength": 2000 },
+        "status": { "type": "string", "enum": ["new", "contacted", "closed"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["type", "status", "createdAt"]
+    },
+    "StockLog": {
+      "title": "StockLog",
+      "description": "Inventory change audit record per product variant.",
+      "type": "object",
+      "properties": {
+        "productId": { "type": "string", "maxLength": 128 },
+        "productName": { "type": "string", "maxLength": 200 },
+        "variantId": { "type": "string", "maxLength": 128 },
+        "variantLabel": { "type": "string", "maxLength": 120 },
+        "previousStock": { "type": "number" },
+        "newStock": { "type": "number" },
+        "change": { "type": "number" },
+        "reason": { "type": "string", "maxLength": 300 },
+        "orderNumber": { "type": "string", "maxLength": 64 },
+        "actorEmail": { "type": "string", "maxLength": 200 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["productId", "productName", "variantId", "variantLabel", "previousStock", "newStock", "change", "reason", "createdAt"]
+    },
+    "CustomerProfile": {
+      "title": "CustomerProfile",
+      "description": "Signed-in customer profile and wishlist isolated strictly to the account owner and admins.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "displayName": { "type": "string", "maxLength": 160 },
+        "email": { "type": "string", "maxLength": 200 },
+        "phone": { "type": "string", "maxLength": 32 },
+        "district": { "type": "string", "maxLength": 100 },
+        "thana": { "type": "string", "maxLength": 120 },
+        "address": { "type": "string", "maxLength": 600 },
+        "wishlist": { "type": "array" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "wishlist", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/admins/{uid}": {
+      "schema": { "$ref": "#/entities/AdminUser" },
+      "description": "Authorized admin accounts for role-based access control."
+    },
+    "/settings/{sectionId}": {
+      "schema": { "$ref": "#/entities/SiteSetting" },
+      "description": "Publicly readable website CMS configuration editable only by admins."
+    },
+    "/categories/{categoryId}": {
+      "schema": { "$ref": "#/entities/Category" },
+      "description": "Product categories."
+    },
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Product catalog with variants, wholesale tiers, and stock."
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/Order" },
+      "description": "Customer orders containing PII, readable only by admins or the order owner."
+    },
+    "/orderTracking/{orderNumber}": {
+      "schema": { "$ref": "#/entities/OrderTracking" },
+      "description": "PII-free order tracking mirror keyed by orderNumber (single-doc get only)."
+    },
+    "/reviews/{reviewId}": {
+      "schema": { "$ref": "#/entities/Review" },
+      "description": "Customer testimonials moderated by admins."
+    },
+    "/media/{mediaId}": {
+      "schema": { "$ref": "#/entities/MediaAsset" },
+      "description": "Centralized media library records."
+    },
+    "/inquiries/{inquiryId}": {
+      "schema": { "$ref": "#/entities/Inquiry" },
+      "description": "Wholesale inquiries, contact messages, and newsletter signups."
+    },
+    "/stockLogs/{logId}": {
+      "schema": { "$ref": "#/entities/StockLog" },
+      "description": "Inventory adjustment audit log."
+    },
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/CustomerProfile" },
+      "description": "Customer saved address and wishlist."
+    }
+  }
+}
